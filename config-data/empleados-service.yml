@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8082} # Variable de entorno para el puerto
+  port: ${SERVER_PORT:0} # Variable de entorno para el puerto
 
 spring:
   application:

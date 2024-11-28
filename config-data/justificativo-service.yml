@@ -1,11 +1,16 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: ${SERVER_PORT:0} # Variable de entorno para el puerto
+
+spring:
+  application:
+    name: justificativo-service
+
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://eureka-service:8761/eureka
+      defaultZone: http://eureka-service:8761/eureka/
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

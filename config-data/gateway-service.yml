@@ -8,7 +8,7 @@ eureka:
     service-url:
       defaultZone: http://eureka-service:8761/eureka
   instance:
-    hostname: localhost
+    hostname: gateway-service
 
 spring:
   cloud:
@@ -16,19 +16,18 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins:
-              - "http://localhost:5173"
+            allowedOrigins: "*"
             allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
               - OPTIONS
-            allowedHeaders:
-              - "*"
+            allowedHeaders: "*"
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
       routes:
         - id: asistencia-service
           uri: lb://asistencia-service

@@ -23,7 +23,8 @@ spring:
             - PUT
             - DELETE
             - OPTIONS
-          allowedHeaders: "*"
+          allowedHeaders: 
+            - "*"
       discovery:
         locator:
           enabled: true

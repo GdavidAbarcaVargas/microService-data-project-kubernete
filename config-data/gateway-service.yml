@@ -40,7 +40,7 @@ spring:
         - id: empleados-service
           uri: lb://empleados-service
           predicates:
-            - Path=/empleado/**
+            - Path=/empleados/**
         - id: horasextras-service
           uri: lb://horasextras-service
           predicates:
